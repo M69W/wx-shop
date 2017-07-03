@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="top_pic {{cur_index != indexa ?'hide':''}}" wx:for="{{cate_list}}"  wx:key="index" wx:for-index="indexa" data-indexa="{{indexa}}">
+      <image src="{{item.top_pic}}"></image>
+  </view>
+
+<view class="tag_box">
+  <view class="tag {{cur_index == idex  ? '':'noton'}}" wx:for="{{cate_list}}" wx:for-index="idex" wx:key="idex" data-index="{{idex}}" bindtap="switchTag">
+  <view class="cate_tag">{{item.cate}}</view>
+  </view>
+</view>
+  
+  <view class="product_list">
+   <view class="product_cate {{cur_index != index ?'hide':''}}" wx:for="{{cate_list}}" wx:key="index">
+     <view class="product_item" wx:for="{{item.detail}}" wx:for-index="indexb" wx:for-item="it" wx:key="indexb">
+
+      <view class="banner">
+       <image src="{{it.image}}"></image>
+      </view>
+
+      <view class="tp">
+
+      <view class="title">
+       <text>{{it.title}}</text>
+      </view>
+
+      <view class="price_text">
+        <text class="old_price">原价:{{it.old_price}}</text>
+        <text class="new_price">促销价:{{it.new_price}}</text>
+      </view>
+      </view>
+      </view>
+   
+   </view>
+  </view>
+</view>
